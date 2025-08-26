@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, FavouritePost
 from django.shortcuts import get_object_or_404, render
-
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def post_list(request):
@@ -23,3 +24,26 @@ def  post_detail(request, id):
         'blog/post/detail.html',
         {'post': post}
     )
+
+def add_favourite(request, id):
+    """ A view to add a post to favourites. Redirects to post detail when favourite added. """
+    post = get_object_or_404(Post, id=id)
+    FavouritePost.objects.get_or_create(
+        user=request.user, post=post
+    )
+    return HttpResponseRedirect(post.get_absolute_url())
+
+@login_required
+def favourites(request):
+    """ A view to list all favourite posts. """
+    favourite_posts = Post.objects.filter(
+        id__in=FavouritePost.objects.filter(
+            user=request.user
+        ).values_list('post_id', flat=True)
+    )
+    return render(
+        request,
+        'blog/post/favourites.html',
+        {'favourite_posts': favourite_posts}
+    )
+
