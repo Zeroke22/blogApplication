@@ -80,7 +80,7 @@ def post_detail(request, year, month, day, post):
     )
 
 def add_favourite(request, id):
-    """ A view to add a post to favourites. Redirects to post detail when favourite added. """
+    """ A view to add a post to favourites."""
     post = get_object_or_404(Post, id=id)
     FavouritePost.objects.get_or_create(
         user=request.user, post=post
