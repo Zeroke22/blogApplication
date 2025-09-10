@@ -1,11 +1,13 @@
 
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-
+from blog.sitemaps import PostSitemap, TagSitemap
 from django.urls import include, path
 
 from blog.sitemaps import PostSitemap
-sitemaps = {'posts': PostSitemap,}
+sitemaps = {'posts': PostSitemap,
+            'tags': TagSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
