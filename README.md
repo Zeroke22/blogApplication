@@ -47,6 +47,7 @@ This project demonstrates how to design and implement a modern blog with SEO, co
 * PostgreSQL
 * Dokcer
 * HTML/CSS
+
 The system is fully developed using the Django Framework on the back-end and HTML/CSS on the front-end.
 It provides a complete blogging platform with a full-featured user interface, including functionalities
 such as post creation and management, comments, email sharing, favorites, tags, SEO-friendly URLs, sitemaps, RSS feeds, and full-text search with PostgreSQL.
