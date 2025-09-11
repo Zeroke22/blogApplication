@@ -30,17 +30,17 @@ This project demonstrates how to design and implement a modern blog with SEO, co
 
 ## 📸 Screenshots
 **Homepage**
-![Homepage] (PREVIEW/Img1.jpg)
+![Homepage](PREVIEW/Img1.jpg)
 
 **Post Detail Page**
-![Post Detail] (PREVIEW/Img4)
+![Post Detail](PREVIEW/Img4.jpg)
 
 **Share post by email**
-![Share Post] (PREVIEW/Img2)
-![Share Post] (PREVIEW/Img3)
+![Share Post](PREVIEW/Img2.jpg)
+![Share Post](PREVIEW/Img3.jpg)
 
 **Tags**
-![Tags] (PREVIEW/Img5)
+![Tags](PREVIEW/Img5.jpg)
 
 ## 🛠️ Tech Stack
 * Django
